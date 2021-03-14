@@ -1,17 +1,23 @@
 import React from "react";
 import "./NavBar.css";
+import {
+    BrowserRouter as Router,
+    Link
+  } from "react-router-dom";
 
 const NavBar = () => {
     return(
         <>
+        <Router>
         <nav className="navbar">
-            <h1 className="logo">WhatTodo!</h1>
-            <div className="nav-btn-container">
+            <Link to="/" className="logo">WhatTodo!</Link>
+            <Link className="nav-btn-container" to="/todo">
             <button className="nav-btn">Let's do</button>
-            </div>
+            </Link>
         </nav>
+        </Router>
         </>
     );
-}
+};
 
 export default NavBar;
