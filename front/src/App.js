@@ -1,27 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Greet from "./components/Greet";
-import Form from "./components/Form";
-
+import React from "react";
 const App = () => {
-
-    const BASE_URL = 'http://localhost:4000'
-    const [getUser, setUser] = useState({});
-
-    useEffect(()=>{
-        fetch(BASE_URL + '/info')
-        .then((res) => res.json())
-        .then((data) => {
-            setUser(data);
-            console.log(data);
-        })
-    }, []);
-
     return(
-        <>
-        <Greet userIn = { getUser}/>
-        <Form/>
-        </>
-    );
-};
-
+        <h1>this is mern todo </h1>
+    )
+}
 export default App;
