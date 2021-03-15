@@ -11,9 +11,9 @@ const NavBar = () => {
         <Router>
         <nav className="navbar">
             <Link to="/" className="logo">WhatTodo!</Link>
-            <Link className="nav-btn-container" to="/todo">
-            <button className="nav-btn">Let's do</button>
-            </Link>
+            <div className="nav-btn-container">
+            <Link to="/todo" className="nav-btn">Let's do</Link>
+            </div>
         </nav>
         </Router>
         </>
