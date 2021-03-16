@@ -1,9 +1,10 @@
 import React from "react";
+import TodoIn from "./TodoIn";
 
 const TodoWindow = () => {
     return(
         <>
-        <h1>todowindow</h1>
+        <TodoIn/>
         </>
     );
 };

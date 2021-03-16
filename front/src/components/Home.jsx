@@ -4,7 +4,7 @@ import "./Home.css";
 
 const Home = () => {
     return(
-        <div className="home container-main">
+        <div className="home container">
             <div className="hero-home">
                 <p>What are you doing man? </p>
                 <p>Get your task done as soon as possible !</p>
