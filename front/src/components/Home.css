@@ -1,0 +1,16 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+ }
+.hero-home{
+    width: 80%;
+}
+.hero-btn-home{
+    width: 4rem;
+    height: 2.5rem;
+}
