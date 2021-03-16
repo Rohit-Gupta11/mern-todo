@@ -1,14 +1,13 @@
-.container,
-.container-fluid,
-.container-sm,
-.container-md,
-.container-lg,
-.container-xl {
+.container{
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 2px 8px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 1.0px );
+  -webkit-backdrop-filter: blur( 1.0px );
 }
 
 @media (min-width: 576px) {
@@ -33,4 +32,8 @@
   .container{
     max-width: 1140px;
   }
+}
+
+.mg-bt{
+  margin-bottom: .66rem;
 }

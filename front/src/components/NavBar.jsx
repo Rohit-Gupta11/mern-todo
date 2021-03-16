@@ -7,7 +7,7 @@ import {
 const NavBar = () => {
     return(
         <>
-        <nav className="navbar">
+        <nav className="navbar mg-bt">
             <Link to="/" className="logo">WhatTodo!</Link>
             <div className="nav-btn-container">
             <Link to="/todo" className="nav-btn">Let's do</Link>
