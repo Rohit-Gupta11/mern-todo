@@ -1,22 +1,25 @@
 import React from "react";
 import "./TodoIn.css";
+import { Link, Redirect } from "react-router-dom";
+
+const api_key = `http://localhost:4000/todo`;
 
 const TodoIn = () => {
     return (
         <div className="container mg-bt">
             <h1>Ok You got new task. Enter ASAP !!</h1>
-            <form action="POST">
+            <form action={`${api_key}/create-todo`} method="post">
                 <div className="">
                     <label>Todo Title </label>
-                    <input className="" type="text" placeholder="enter title " />
+                    <input name="todotitle" type="text" placeholder="enter title " />
                 </div>
                 <div className="">
                     <label>Todo Description </label>
-                    <textarea className="" name="" id="" cols="30" rows="10" placeholder="enter description "></textarea>
+                    <textarea name="tododescription" id="" cols="30" rows="10" placeholder="enter description "></textarea>
                 </div>
+                <button onSubmit = {} type="submit">Submit</button>
+                <Link to="/">Cancel</Link>
             </form>
-            <a href="/todo">Submit</a>
-            <a href="/">Cancel</a>
         </div>
     );
 };
