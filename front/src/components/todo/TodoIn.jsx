@@ -1,6 +1,6 @@
 import React from "react";
 import "./TodoIn.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const api_key = `http://localhost:4000/todo`;
 
@@ -17,7 +17,7 @@ const TodoIn = () => {
                     <label>Todo Description </label>
                     <textarea name="tododescription" id="" cols="30" rows="10" placeholder="enter description "></textarea>
                 </div>
-                <button onSubmit = {} type="submit">Submit</button>
+                <button type="submit">Submit</button>
                 <Link to="/">Cancel</Link>
             </form>
         </div>
