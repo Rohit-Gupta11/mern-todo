@@ -6,7 +6,8 @@ import {
 import "./App.css"
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import TodoWindow from "./components/todo/TodoWindow";
+import {TodoWindow, TodoEdit, TodoIn} from "./components/todo";
+
 
 const App = () => {
     return(
@@ -17,8 +18,14 @@ const App = () => {
                     <Route exact path="/">
                         <Home/>
                     </Route>
-                    <Route path="/todo">
+                    <Route exact path="/todo">
                         <TodoWindow/>
+                    </Route>
+                    <Route exact path="/todo/create-todo">
+                        <TodoIn/>
+                    </Route>
+                    <Route exact path="/todo/edit-todo">
+                        <TodoEdit/>
                     </Route>
                 </Switch>
             </Router>
