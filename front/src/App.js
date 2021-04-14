@@ -6,7 +6,10 @@ import {
 import "./App.css"
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import {TodoWindow, TodoEdit, TodoIn} from "./components/todo";
+import TodoIn from "./components/todo/TodoIn";
+import TodoEdit from "./components/todo/TodoEdit";
+import TodoWindow from "./components/todo/TodoWindow";
+
 
 
 const App = () => {

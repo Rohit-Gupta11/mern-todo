@@ -17,7 +17,7 @@ const TodoIn = () => {
                     <label>Todo Description </label>
                     <textarea name="tododescription" id="" cols="30" rows="10" placeholder="enter description "></textarea>
                 </div>
-                <button type="submit">Submit</button>
+                <input type="submit">Submit</input>
                 <Link to="/">Cancel</Link>
             </form>
         </div>

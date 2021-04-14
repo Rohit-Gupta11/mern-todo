@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
 
 .navbar{
     width: 100%;
@@ -7,11 +8,8 @@
     align-items: center;
     height: 4em;
     justify-content: space-between;
-    background-color: rgb(127, 248, 7);
-    border: 1px solid rgb(6, 192, 6);
-    box-shadow: 0 2px 6px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 1.0px );
-    -webkit-backdrop-filter: blur( 1.0px );
+    background: rgba(115, 228, 133, 0.92);
+    box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.25);
 }
 .logo{
     width: 65%;
@@ -25,21 +23,21 @@
     display: flex;
     height: 100%;
     align-items: center;
+    justify-content: center;
     width: 28%;
-    margin-left: 1rem;
-    background-color: inherit;
 }
 .nav-btn{
-    width: 100%;
+    width: 80%;
     height: 80%;
-    background-color: rgb(93, 223, 18);
-    border: 1px solid rgb(6, 192, 6);
-    border-right: none;
+    background: #10F1BB;
+    border-radius: 50px;
     text-decoration: none;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-family: 'Play', sans-serif;
-    font-size: 2.2rem;
-    color: rgb(217, 255, 0);
+    font-family: Pangolin;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 45px;
+    color: honeydew;
 }

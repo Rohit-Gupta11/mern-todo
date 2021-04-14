@@ -7,8 +7,8 @@ import {
 const TodoWindow = () => {
     return(
         <>
-        <TodoList/>
         <Link to="/todo/create-todo">Create</Link>
+        <TodoList/>
         </>
     );
 };
