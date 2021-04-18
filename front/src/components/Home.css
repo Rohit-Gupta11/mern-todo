@@ -27,7 +27,7 @@
 .kids{
     width: 25rem;
     height: calc(1220px - 50em);
-    background: url('kids.png');
+    background: url("./kids.jpg");
     transform: rotate(-14.89deg);
 }
 .hero-btn-container{
@@ -37,7 +37,7 @@
     margin: 1.5em auto ;
 }
 .hero-btn-home{
-    width: 35vw;
+    width: 251px;
     background: #10F1BB;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 52px;

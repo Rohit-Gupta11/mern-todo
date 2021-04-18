@@ -1,5 +1,5 @@
 import React from "react";
-import "./TodoList.css";
+import "./todo.css";
 
 const TodoList = () => {
     return(

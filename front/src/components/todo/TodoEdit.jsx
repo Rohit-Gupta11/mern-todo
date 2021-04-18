@@ -1,5 +1,5 @@
 import React from "react";
-import "./TodoEdit.css";
+import "./todo.css";
 
 const TodoEdit = () => {
     return(

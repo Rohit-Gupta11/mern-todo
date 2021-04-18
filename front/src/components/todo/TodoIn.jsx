@@ -1,5 +1,5 @@
 import React from "react";
-import "./TodoIn.css";
+import "./todo.css";
 import { Link } from "react-router-dom";
 
 const api_key = `http://localhost:4000/todo`;

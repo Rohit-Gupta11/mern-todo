@@ -3,6 +3,7 @@ import TodoList from "./TodoList";
 import {
     Link
 } from "react-router-dom";
+import "./todo.css";
 
 const TodoWindow = () => {
     return(
