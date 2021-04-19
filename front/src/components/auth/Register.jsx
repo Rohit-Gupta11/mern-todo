@@ -4,7 +4,7 @@ import "./auth.css";
 
 const Register = () => {
     return (
-        <div className="container auth">
+        <form method="POST" action="/" className="container auth">
             <h1 className="heading">Register</h1>
             <div className="sub-details-con">
                 <label htmlFor="username">Username</label>
@@ -15,10 +15,10 @@ const Register = () => {
                 <input type="text" />
             </div>
             <div className="btn-con">
-                <div className="auth-btn">Register</div>
+                <input type="submit" className="auth-btn" placeholder="Register"/>
                 <p>or<Link to="/login"> Login</Link></p>
             </div>
-        </div>
+        </form>
     );
 };
 

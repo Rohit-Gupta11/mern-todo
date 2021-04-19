@@ -1,12 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import "./Home.css";
+import Kids from "./kids.png";
 
 const Home = () => {
     return(
         <>
         <div className="home container">
-            <div className="kids"></div>
+            <img src={Kids} alt="something" className="kids"/>
             <div className="hero-text">
                 <p className="p1">Making a todo-list is always a <br/>great idea.</p>
                 <p className="p2">Don’t waste time anymore!<br/>Make your todo-list here</p>

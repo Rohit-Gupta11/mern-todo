@@ -3,7 +3,7 @@ import "./auth.css";
 
 const Login = () => {
     return (
-        <div className="container auth">
+        <form method="POST" action="" className="container auth">
             <h1 className="heading">Login</h1>
             <div className="sub-details-con">
                 <label htmlFor="username">Username</label>
@@ -14,9 +14,9 @@ const Login = () => {
                 <input type="text" />
             </div>
             <div className="btn-con">
-                <div className="auth-btn mg-bt">Login</div>
+                <input type="submit" className="auth-btn mg-bt" placeholder="Login" />
             </div>
-        </div>
+        </form>
     );
 };
 

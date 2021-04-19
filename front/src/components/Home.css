@@ -27,7 +27,6 @@
 .kids{
     width: 25rem;
     height: calc(1220px - 50em);
-    background: url("./kids.jpg");
     transform: rotate(-14.89deg);
 }
 .hero-btn-container{
