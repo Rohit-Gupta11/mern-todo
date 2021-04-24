@@ -1,7 +1,8 @@
 const express = require('express');
-const authRouter = express.Router();
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const authRouter = express.Router();
 const saltRounds = 10;
 
 // creating user schema for storing data
@@ -37,7 +38,9 @@ authRouter.post('/register', async (req, res) => {
 
         });
 
-        res.status(200);
+        res.json({
+            message: "Username registered"
+        });
     }
 });
 
@@ -54,15 +57,27 @@ authRouter.post('/login', async (req, res) => {
         if (result) {
             bcrypt.compare(password, result.password, (err, response) => {
                 if (response) {
-                    res.send(result);
+                    req.session.user = result;
+                    console.log(req.session.user);
+                    res.json({
+                        message: "Username logined"
+                    });
                 } else {
-                    res.send({ message: "Wrong username/password combination" });
+                    res.json({ message: "Wrong username/password combination" });
                 }
             });
         } else {
-            res.send({ message: "Username doesn't exist" });
+            res.json({ message: "Username doesn't exist" });
         }
     });
+});
+
+authRouter.get('/login', (req,res) => {
+    if (req.session.user) {
+        res.send({ loggedIn: true, user: req.session.user});
+    } else {
+        res.send({ loggedIn: false });
+    }
 });
 
 module.exports = authRouter;

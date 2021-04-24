@@ -1,9 +1,9 @@
 import React from "react";
 import {
     BrowserRouter as Router,
-    Switch, 
+    Switch,
     Route
-  } from "react-router-dom";
+} from "react-router-dom";
 import "./App.css"
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
@@ -13,25 +13,25 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 
 const App = () => {
-    return(
+    return (
         <>
             <Router>
-                <NavBar/>
+                <NavBar />
                 <Switch>
                     <Route exact path="/">
-                        <Home/>
+                        <Home />
                     </Route>
                     <Route exact path="/todo">
-                        <TodoWindow/>
+                        <TodoWindow />
                     </Route>
                     <Route exact path="/todo/create-todo">
-                        <TodoIn/>
+                        <TodoIn />
                     </Route>
                     <Route exact path="/register">
-                        <Register/>
+                        <Register />
                     </Route>
                     <Route exact path="/login">
-                        <Login/>
+                        <Login />
                     </Route>
                 </Switch>
             </Router>
