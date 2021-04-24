@@ -19,14 +19,15 @@ const Register = () => {
             username: usernameReg,
             password: passwordReg
         }).then((response) => {
-            console.log(response.data.message);
-            history.push('/todo');
+            if (response.status == 200) {
+                history.push('/todo');
+            }
         });
     }
 
     useEffect(() => {
         Axios.get("http://localhost:4000/user/login").then((response) => {
-            if (response.data.loggedIn === true){
+            if (response.data.loggedIn === true) {
                 history.push("/todo");
             }
         });
@@ -37,11 +38,11 @@ const Register = () => {
             <h1 className="heading">Register</h1>
             <div className="sub-details-con">
                 <label>Username</label>
-                <input type="text" onChange={e => setUsernameReg(e.target.value)}/>
+                <input type="text" onChange={e => setUsernameReg(e.target.value)} />
             </div>
             <div className="sub-details-con">
                 <label>Password</label>
-                <input type="text" onChange={e => setPasswordReg(e.target.value)}/>
+                <input type="text" onChange={e => setPasswordReg(e.target.value)} />
             </div>
             <div className="btn-con">
                 <button onClick={registerUser} className="auth-btn">Register</button>

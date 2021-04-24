@@ -10,7 +10,7 @@ const Login = () => {
     const [usernameLog, setUsernameLog] = useState("");
     const [passwordLog, setPasswordLog] = useState("");
 
-    let  history = useHistory();
+    let history = useHistory();
 
     Axios.defaults.withCredentials = true;
 
@@ -19,14 +19,15 @@ const Login = () => {
             username: usernameLog,
             password: passwordLog
         }).then((response) => {
-            console.log(response.data.message);
-            history.push("/todo");
+            if (response.status == 200) {
+                history.push("/todo");
+            }
         });
     }
 
     useEffect(() => {
         Axios.get("http://localhost:4000/user/login").then((response) => {
-            if (response.data.loggedIn === true){
+            if (response.data.loggedIn === true) {
                 history.push("/todo");
             }
         });

@@ -14,7 +14,6 @@ const userSchema = mongoose.Schema({
 // creating user model/collection in database
 const userModel = mongoose.model('user', userSchema);
 
-
 authRouter.post('/register', async (req, res) => {
     const { username, password } = req.body;
 
@@ -38,7 +37,7 @@ authRouter.post('/register', async (req, res) => {
 
         });
 
-        res.json({
+        res.status(200).json({
             message: "Username registered"
         });
     }
@@ -58,8 +57,7 @@ authRouter.post('/login', async (req, res) => {
             bcrypt.compare(password, result.password, (err, response) => {
                 if (response) {
                     req.session.user = result;
-                    console.log(req.session.user);
-                    res.json({
+                    res.status(200).json({
                         message: "Username logined"
                     });
                 } else {

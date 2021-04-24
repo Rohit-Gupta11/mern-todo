@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -36,7 +37,7 @@ myapp.use('/todo', todoRouter);
 
 myapp.use('/user', authRouter);
 
-mongoose.connect("mongodb+srv://adminme:xatKUcuLcX9Hkp7k@cluster0.5g27e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 myapp.listen(PORT, () => {
     console.log(`this app is runing at http://localhost:${PORT}`);
