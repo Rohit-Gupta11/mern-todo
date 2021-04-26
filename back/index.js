@@ -17,7 +17,7 @@ myapp.use(bodyParser.json());
 
 myapp.use(cors({
     origin: "http://localhost:3000",
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "DELETE"],
     credentials: true
 }));
 
@@ -29,7 +29,7 @@ myapp.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        expires: 60 * 60 * 24
+        expires: 6000 * 60 * 24
     }
 }));
 

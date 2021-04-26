@@ -15,22 +15,30 @@ const Register = () => {
     Axios.defaults.withCredentials = true;
 
     const registerUser = () => {
-        Axios.post(api_key, {
-            username: usernameReg,
-            password: passwordReg
-        }).then((response) => {
-            if (response.status == 200) {
-                history.push('/todo');
-            }
-        });
+        if (usernameReg && passwordReg) {
+            Axios.post(api_key, {
+                username: usernameReg,
+                password: passwordReg
+            }).then((response) => {
+                if (response.status === 200) {
+                    history.push('/todo');
+                }
+            });
+        }
     }
 
+    // if user already logined, push to dashboard page
     useEffect(() => {
         Axios.get("http://localhost:4000/user/login").then((response) => {
             if (response.data.loggedIn === true) {
                 history.push("/todo");
             }
         });
+    }, [history]);
+
+    // for setting document title
+    useEffect(() => {
+        document.title = "Register";
     }, []);
 
     return (

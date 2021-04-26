@@ -1,22 +1,20 @@
 import React from "react";
 import "./main.css";
 import {
-    Link
-  } from "react-router-dom";
+    Link,
+} from "react-router-dom";
 
 const NavBar = () => {
-    return(
+
+    return (
         <>
-        <nav className="navbar mg-bt">
-            <div className="container nav-con">
-            <div className="logo-container">
-            <Link to="/" className="logo">WhatTodo!</Link>
-            </div>
-            <div className="nav-btn-container">
-            <Link to="/register" className="nav-btn">Let's do</Link>
-            </div>
-            </div>
-        </nav>
+            <nav className="navbar mg-bt">
+                <div className="container nav-con">
+                    <div className="logo-container">
+                        <Link to="/" className="logo">WhatTodo!</Link>
+                    </div>
+                </div>
+            </nav>
         </>
     );
 };

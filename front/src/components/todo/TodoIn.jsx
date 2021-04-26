@@ -1,25 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./todo.css";
-import { Link } from "react-router-dom";
+import Axios from "axios";
 
-const api_key = `http://localhost:4000/todo`;
+const TodoIn = (props) => {
+    const {
+        userId,
+        setIsloaded
+    } = props;
 
-const TodoIn = () => {
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+
+    const titleIn = document.getElementById("titleIn");
+    const descriptionIn = document.getElementById("descriptionIn");
+
+    function sendData() {
+        Axios.post("http://localhost:4000/todo/create-todo", {
+            userId: userId,
+            title: title,
+            description: description
+        });
+        titleIn.value = "";
+        descriptionIn.value = "";
+        setIsloaded(true);
+    }
+
     return (
-        <div className="container mg-bt">
-            <h1>Ok You got new task. Enter ASAP !!</h1>
-            <form action={`${api_key}/create-todo`} method="post">
-                <div className="">
-                    <label>Todo Title </label>
-                    <input name="todotitle" type="text" placeholder="enter title " />
-                </div>
-                <div className="">
-                    <label>Todo Description </label>
-                    <textarea name="tododescription" id="" cols="30" rows="10" placeholder="enter description "></textarea>
-                </div>
-                <input type="submit">Submit</input>
-                <Link to="/">Cancel</Link>
-            </form>
+        <div>
+            <label>Title</label>
+            <input type="text" id="titleIn" onChange={(e) => setTitle(e.target.value)} />
+            <label>Description</label>
+            <textarea id="descriptionIn" name="description" cols="30" rows="10" onChange={(e) => setDescription(e.target.value)}></textarea>
+            <button onClick={sendData}>Done</button>
         </div>
     );
 };

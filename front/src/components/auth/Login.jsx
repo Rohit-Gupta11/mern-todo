@@ -15,22 +15,30 @@ const Login = () => {
     Axios.defaults.withCredentials = true;
 
     const loginUser = () => {
-        Axios.post(api_key, {
-            username: usernameLog,
-            password: passwordLog
-        }).then((response) => {
-            if (response.status == 200) {
-                history.push("/todo");
-            }
-        });
+        if (usernameLog && passwordLog) {
+            Axios.post(api_key, {
+                username: usernameLog,
+                password: passwordLog
+            }).then((response) => {
+                if (response.status === 200) {
+                    history.push("/todo");
+                }
+            });
+        }
     }
 
+    // if user already logined, push to dashboard page
     useEffect(() => {
         Axios.get("http://localhost:4000/user/login").then((response) => {
             if (response.data.loggedIn === true) {
                 history.push("/todo");
             }
         });
+    }, [history]);
+
+    // for setting document title 
+    useEffect(() => {
+        document.title = "Login";
     }, []);
 
     return (

@@ -33,13 +33,15 @@ authRouter.post('/register', async (req, res) => {
             await userModel.create({
                 username: username,
                 password: hash
+            }, (err, result) => {
+                req.session.user = result;
+                res.status(200).json({
+                    message: "Username registered"
+                });
             });
 
         });
 
-        res.status(200).json({
-            message: "Username registered"
-        });
     }
 });
 
@@ -48,7 +50,7 @@ authRouter.post('/login', async (req, res) => {
 
     // write code for finding user in db
     await userModel.findOne({ username: username }, (err, result) => {
-    
+
         if (err) {
             res.send({ err: err });
         }
@@ -70,12 +72,20 @@ authRouter.post('/login', async (req, res) => {
     });
 });
 
-authRouter.get('/login', (req,res) => {
+authRouter.get('/login', (req, res) => {
     if (req.session.user) {
-        res.send({ loggedIn: true, user: req.session.user});
+        res.send({ loggedIn: true, user: req.session.user });
     } else {
         res.send({ loggedIn: false });
     }
 });
 
+authRouter.delete('/login', (req,res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200);
+    })
+})
 module.exports = authRouter;

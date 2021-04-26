@@ -17,40 +17,17 @@
     justify-content: space-evenly;
 }
 .logo-container{
-    width: 65%;
+    width: 100%;
     display: flex;
 }
 .logo{
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     text-decoration: none;
     font-family: 'Pacifico', cursive;
     font-size: 2.8rem;
     color: honeydew;
 }
-.nav-btn-container{
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    width: 28%;
-}
-.nav-btn{
-    width: 251px;
-    height: 80%;
-    background: #10F1BB;
-    border-radius: 50px;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    font-family: Pangolin;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 45px;
-    color: honeydew;
-}
-
 /* --------------------- Home styles ------------------------------ */
 .home{
     display: flex;
@@ -102,4 +79,9 @@
     align-items: center;
     justify-content: center;
     color: #FFFEFE;
+}
+.hero-btn-home:hover, .hero-btn-home:active{
+    cursor: pointer;
+    background-color: rgb(2, 214, 165);
+    box-shadow: none;
 }

@@ -57,6 +57,12 @@
     border: none;
 }
 
+.auth-btn:hover{
+    cursor: pointer;
+    background-color: rgb(2, 214, 165);
+    box-shadow: none;
+}
+
 .btn-con p{
     display: flex;
     align-items: center;
