@@ -24,6 +24,8 @@ const Login = () => {
                     history.push("/todo");
                 }
             });
+        }else{
+            alert('please enter valid credentials')
         }
     }
 

@@ -18,9 +18,11 @@ const List = (props) => {
     }
 
     return (
-        <div>
+        <div className="todo-list">
+            <div className="sub-list">
             <label>{title}</label>
             <p>{description}</p>
+            </div>
             <button onClick={deleteTodo} >Delete</button>
         </div>
     );
@@ -55,15 +57,17 @@ const TodoWindow = () => {
     }, [user, isloaded]);
 
     return (
-        <div className="container">
-            <h1>DASHBOARD</h1>
+        <div className="container con-dash">
+            <div className="dashboard">
+                <h1 className="headDash">DASHBOARD</h1>
+                {
+                    data &&
+                    data.map((item) => {
+                        return <List key={item._id} setIsloaded={setIsloaded} todoId={item._id} title={item.title} description={item.description} />
+                    })
+                }
+            </div>
             <TodoIn isloaded={isloaded} setIsloaded={setIsloaded} userId={user} />
-            {
-                data &&
-                data.map((item) => {
-                    return <List key={item._id} setIsloaded={setIsloaded} todoId={item._id} title={item.title} description={item.description} />
-                })
-            }
         </div>
     );
 };

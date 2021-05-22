@@ -15,18 +15,22 @@ const TodoIn = (props) => {
     const descriptionIn = document.getElementById("descriptionIn");
 
     function sendData() {
-        Axios.post("http://localhost:4000/todo/create-todo", {
-            userId: userId,
-            title: title,
-            description: description
-        });
-        titleIn.value = "";
-        descriptionIn.value = "";
-        setIsloaded(true);
+        if (title && description) {
+            Axios.post("http://localhost:4000/todo/create-todo", {
+                userId: userId,
+                title: title,
+                description: description
+            });
+            titleIn.value = "";
+            descriptionIn.value = "";
+            setIsloaded(true);
+        }else{
+            alert('please enter valid input')
+        }
     }
 
     return (
-        <div>
+        <div className="newone" >
             <label>Title</label>
             <input type="text" id="titleIn" onChange={(e) => setTitle(e.target.value)} />
             <label>Description</label>

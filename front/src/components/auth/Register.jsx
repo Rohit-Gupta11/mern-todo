@@ -24,6 +24,8 @@ const Register = () => {
                     history.push('/todo');
                 }
             });
+        }else{
+            alert('please enter valid credentials')
         }
     }
 
@@ -54,7 +56,7 @@ const Register = () => {
             </div>
             <div className="btn-con">
                 <button onClick={registerUser} className="auth-btn">Register</button>
-                <p>or<Link to="/login"><span></span>Login</Link></p>
+                <strong><p>or<Link to="/login"><span>Login</span></Link></p></strong>
             </div>
         </div>
     );
