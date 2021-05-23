@@ -28,6 +28,18 @@ const List = (props) => {
     );
 }
 
+const Logout = () => {
+    let history = useHistory();
+    function logOut(){
+        Axios.delete("http://localhost:4000/user/login").then((response) => {
+            history.push("/");
+        });
+    }
+    return(
+        <input onClick={logOut} type="submit" value="Logout" />
+    )
+}
+
 const TodoWindow = () => {
     const [user, setUser] = useState();
     const [data, setData] = useState([]);
@@ -59,7 +71,10 @@ const TodoWindow = () => {
     return (
         <div className="container con-dash">
             <div className="dashboard">
+                <div className="subdash">
                 <h1 className="headDash">DASHBOARD</h1>
+                <Logout/>
+                </div>
                 {
                     data &&
                     data.map((item) => {

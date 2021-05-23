@@ -81,11 +81,8 @@ authRouter.get('/login', (req, res) => {
 });
 
 authRouter.delete('/login', (req,res) => {
-    req.session.destroy((err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200);
-    })
+    req.session.user = null;
+    res.send(200);
 })
+
 module.exports = authRouter;

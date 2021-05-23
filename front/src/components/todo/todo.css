@@ -27,6 +27,16 @@
     flex-direction: column;
 }
 
+.subdash{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subdash input{
+    width: 100px;
+}
+
 /*------------------new todo-----------------------------------*/
 .newone{
     display: flex;
