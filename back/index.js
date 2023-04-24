@@ -16,7 +16,7 @@ myapp.use(bodyParser.urlencoded({extended: true}));
 myapp.use(bodyParser.json());
 
 myapp.use(cors({
-    origin:  process.env.ORIGIN || "http://localhost:3000",
+    origin:  process.env.ORIGIN,
     methods: ["GET", "POST", "DELETE"],
     credentials: true
 }));
