@@ -35,6 +35,7 @@ authRouter.post('/register', async (req, res) => {
                 password: hash
             }, (err, result) => {
                 req.session.user = result;
+                req.session.save();
                 res.status(200).json({
                     message: "Username registered"
                 });
@@ -59,6 +60,7 @@ authRouter.post('/login', async (req, res) => {
             bcrypt.compare(password, result.password, (err, response) => {
                 if (response) {
                     req.session.user = result;
+                    req.session.save();
                     res.status(200).json({
                         message: "Username logined"
                     });
@@ -82,6 +84,7 @@ authRouter.get('/login', (req, res) => {
 
 authRouter.delete('/login', (req,res) => {
     req.session.user = null;
+    req.session.save()
     res.send(200);
 })
 
