@@ -29,6 +29,7 @@ myapp.use(session({
     resave: true,
     saveUninitialized: true,
     cookie: {
+        path: '/',
         expires: 6000 * 60 * 24,
         sameSite: "none"
     }
