@@ -26,7 +26,7 @@ myapp.use(cookieParser());
 myapp.use(session({
     key: "userId",
     secret: "subscribe",
-    resave: false,
+    resave: true,
     saveUninitialized: false,
     cookie: {
         expires: 6000 * 60 * 24,
