@@ -11,12 +11,12 @@ const myapp = express();
 
 const PORT = process.env.PORT || 4000;
 
-myapp.use(bodyParser.urlencoded({extended: true}));
+myapp.use(bodyParser.urlencoded({ extended: true }));
 
 myapp.use(bodyParser.json());
 
 myapp.use(cors({
-    origin:  process.env.ORIGIN,
+    origin: process.env.ORIGIN,
     methods: ["GET", "POST", "DELETE"],
     credentials: true
 }));
@@ -29,7 +29,8 @@ myapp.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        expires: 6000 * 60 * 24
+        expires: 6000 * 60 * 24,
+        sameSite: "none"
     }
 }));
 
