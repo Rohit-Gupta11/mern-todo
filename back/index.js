@@ -27,7 +27,7 @@ myapp.use(session({
     key: "userId",
     secret: "subscribe",
     resave: true,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: {
         expires: 6000 * 60 * 24,
         sameSite: "none"
