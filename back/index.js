@@ -23,15 +23,19 @@ myapp.use(cors({
 
 myapp.use(cookieParser());
 
+myapp.set('trust proxy', 1);
+
 myapp.use(session({
+    proxy: true,
     key: "userId",
     secret: "subscribe",
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     cookie: {
-        path: '/',
+        httpOnly: true, 
+        secure: true,
         expires: 6000 * 60 * 24,
-        sameSite: "none"
+        sameSite: 'none'
     }
 }));
 
